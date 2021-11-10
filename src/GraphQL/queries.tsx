@@ -21,7 +21,7 @@ query{
 `;
 
 export const LOAD_COUNTRY = gql`
-query getCountryByCode($code: ID!){ 
+query getCountryByCode($code: ID!   ){ 
    country(code: $code) {
     code
     name
