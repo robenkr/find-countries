@@ -8,6 +8,8 @@ function Countries() {
 
     const {data} = useQuery(LOAD_COUNTRIES);
     const [countries, setCountries] = useState([]);
+    const [query, setQuery] = useState("");
+    const [searchParam] = useState(["name", "code"])
 
     useEffect(() => {
         if (data) {
@@ -15,16 +17,34 @@ function Countries() {
         }
     }, [data]);
 
+    function filterByName(countries: any){
+        return countries.filter((country: any) => {
+            return searchParam.some((oneCountry) => {
+                return (
+                    country[oneCountry]
+                        .toString()
+                        .toLowerCase()
+                        .indexOf(query.toLowerCase()) > -1
+                );
+            });
+        });
+    }
+
     return (
         <div>
-            <div className="lg:flex justify-between items-center mb-6">
-                <h1 className="text-3xl font-semibold mb-2 lg:mb-0"> Countries list</h1>
+            <div className='container flex justify-center items-center px-4 sm:px-6 lg:px-8 mt-10 mb-5'>
+                <label htmlFor="search-form" className='relative'>
+                    <input
+                        type="search" name='search-form' id='search-form'
+                        className='h-14 w-96 pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none'
+                        placeholder='Search by name or Code' value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                    />
+                </label>
             </div>
-            <div className="flex flex-wrap -mx-3 mb-20">
+            <div className="flex flex-wrap -mx-3 mb-20 overflow-y-auto h-screen no-scrollbar">
                 {
-                    countries.map(
-                        (country, index) => <Country country={country} key={index}/>
-                    )
+                    filterByName(countries).map((country: any, index: any) => <Country {...country} key={index}/>)
                 }
             </div>
         </div>
