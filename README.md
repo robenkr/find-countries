@@ -16,7 +16,7 @@ in GraphQL
 </p>
 
 ## Tech stack & Open-source libraries
-- [Reactjs](https://reactjs.org/) based + [GraphQL](https://graphql.org/) + [Tailwindcss](https://tailwindcss.com/) for User Interface.
+- [Reactjs](https://reactjs.org/) based + [TypeScript](https://www.typescriptlang.org/) + [GraphQL](https://graphql.org/) + [Tailwindcss](https://tailwindcss.com/) for User Interface.
 - Architecture
     - MVC Architecture
 ## Challenge and difficulties encountered

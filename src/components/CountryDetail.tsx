@@ -15,7 +15,7 @@ function CountryDetail() {
     useEffect(() => {
         if (data !== undefined) {
             // console.log(data);
-            setCountry(data.country)
+            setCountry(data)
         }
         // if(error){
         //     console.log(`Load Data Error => ${error}`);
@@ -38,29 +38,29 @@ function CountryDetail() {
                             />
                         </div>
                         <div className="flex flex-col items-center text-center justify-center"><h2
-                            className="font-medium title-font mt-4 text-gray-900 text-lg">{data.country.name}</h2>
+                            className="font-medium title-font mt-4 text-gray-900 text-lg">{data.name}</h2>
                             <div className="w-12 h-1 bg-blue-500 rounded mt-2 mb-4"/>
                             <p className="text-base">
-                                <strong>Capital :</strong> {data.country.capital}
+                                <strong>Capital :</strong> {data.capital}
                             </p>
                         </div>
                     </div>
                     <div
                         className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
                         <p className="leading-relaxed text-lg mb-4">
-                            <strong>Continent :</strong> {data.country.continent.name}
+                            <strong>Continent :</strong> {data.continent.name}
                         </p>
                         <p className="leading-relaxed text-lg mb-4">
-                            <strong>Currency :</strong> {data.country.currency}
+                            <strong>Currency :</strong> {data.currency}
                         </p>
                         <p className="leading-relaxed text-lg mb-4">
-                            <strong>Phone-code :</strong> {data.country.currency}
+                            <strong>Phone-code :</strong> {data.currency}
                         </p>
                         <p className="leading-relaxed text-lg mb-4">
-                            <strong>Languages-name :</strong> {data.country.languages[0].name}
+                            <strong>Languages-name :</strong> {data.languages[0].name}
                         </p>
                         <p className="leading-relaxed text-lg mb-4">
-                            <strong>Languages-native :</strong> {data.country.languages[0].native}
+                            <strong>Languages-native :</strong> {data.languages[0].native}
                         </p>
                     </div>
                 </div>
