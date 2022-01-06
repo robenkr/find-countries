@@ -42,7 +42,7 @@ function Countries() {
                     />
                 </label>
             </div>
-            <div className="flex flex-wrap -mx-3 mb-20 overflow-y-auto h-screen no-scrollbar">
+            <div className="flex flex-wrap -mx-3 mb-20 overflow-y-auto h-screen scrollbar">
                 {
                     filterByName(countries).map((country: any, index: any) => <Country {...country} key={index}/>)
                 }

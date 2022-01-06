@@ -1,3 +1,15 @@
+.scollbar-transparent::-webkit-scrollbar{
+  @apply h-0 w-0;
+}
+
+.scollbar::-webkit-scrollbar{
+  @apply w-1.5 h-1.5;
+}
+
+.scollbar::-webkit-scrollbar-thumb{
+  @apply rounded lg:bg-cyan-700 bg-transparent lg:hover:bg-cyan-300;
+}
+
 .App {
   text-align: center;
 }

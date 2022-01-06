@@ -7,7 +7,7 @@ export function addDefaultSrc(event: any) : void{
 function Country(props: any) {
 
     let to = `/country/${props.code}`;
-    let imgLink = `https://www.worldometers.info/img/flags/${props.code.toLocaleLowerCase()}-flag.gif`;
+    let imgLink = `https://www.worldatlas.com/r/w425/img/flag/${props.code.toLocaleLowerCase()}-flag.jpg`;
 
 
 
