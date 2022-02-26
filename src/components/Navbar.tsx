@@ -2,18 +2,6 @@ import {Link} from "react-router-dom";
 
 function Navbar() {
     return (
-        // <header className="top-bar top-0 left-0 fixed w-full h-16 pb-4 mb-10">
-        //     <div
-        //         className="-intro-y top-bar__content bg-white border-theme-3 dark:bg-dark-2 dark:border-dark-2 border-b w-full h-full flex px-5">
-        //         <div className="hidden md:flex items-center h-full mr-auto">
-        //             <h1 className="text-base font-medium ml-4">Find Countries</h1>
-        //
-        //         </div>
-        //     </div>
-        //     <nav>
-        //
-        //     </nav>
-        // </header>
         <header className="absolute w-full h-16 bg-white shadow-md transition lg:h-20">
             <nav className="container m-auto py-3 lg:px-20 lg:py-4">
                 <div className="relative flex flex-wrap items-center justify-between">
@@ -33,15 +21,6 @@ function Navbar() {
                             <li>
                                 <Link to={'/'} className="block w-full py-3 transition hover:text-cyan-600">Home</Link>
                             </li>
-                            {/*<li>*/}
-                            {/*    <Link to={'/'} className="block w-full py-3 transition hover:text-cyan-600">Services</Link>*/}
-                            {/*</li>*/}
-                            {/*<li>*/}
-                            {/*    <Link to={'/'} className="block w-full py-3 transition hover:text-cyan-600">About</Link>*/}
-                            {/*</li>*/}
-                            {/*<li>*/}
-                            {/*    <Link to={'/'} className="block w-full py-3 transition hover:text-cyan-600">Blog</Link>*/}
-                            {/*</li>*/}
                             <li className="mt-4 lg:mt-0">
                                 <Link to={'/'} className="block w-full py-3 px-6 rounded-xl bg-cyan-500 transition hover:bg-cyan-600 focus:bg-cyan-700 active:bg-cyan-800">
                                     <span className="block text-center text-white font-semibold lg:text-base">Contact us</span>

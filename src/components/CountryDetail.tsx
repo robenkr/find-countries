@@ -3,6 +3,7 @@ import {LOAD_COUNTRY} from "../GraphQL/queries";
 import {useQuery} from "@apollo/client";
 import {useEffect, useState} from "react";
 import {addDefaultSrc} from './Country';
+import LoadingAnimation from "./Loading-animation";
 
 function CountryDetail() {
     let {countryCode} = useParams<{countryCode: string}>();
@@ -72,8 +73,8 @@ function CountryDetail() {
                     </div>
                 </div>
             </div> :
-                <div className="container px-5 py-24 mx-auto flex flex-col">
-                    <h1>Loading...</h1>
+                <div className="container px-5 py-24 mx-auto my-32 flex flex-col">
+                    <LoadingAnimation/>
                 </div>
             }
         </div>
