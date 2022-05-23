@@ -1,6 +1,10 @@
 import Lottie from "react-lottie";
 import loading from '../lotties/loading-animation.json';
 
+/**
+ * Method that return an animation
+ * @return Animation view(div)
+ */
 function LoadingAnimation() {
     const defaultOptions = {
         loop: true,

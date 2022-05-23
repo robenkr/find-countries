@@ -18,6 +18,11 @@ function Countries() {
         }
     }, [data]);
 
+    /**
+     * Method that return a filtered list
+     * @param countries A Country list
+     * @return Filtered list
+     */
     function filterByName(countries: any){
         return countries.filter((country: any) => {
             return searchParam.some((oneCountry) => {
