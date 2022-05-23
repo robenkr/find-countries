@@ -1,5 +1,8 @@
 import {gql} from "apollo-boost";
 
+/**
+ * Export the country list from api
+ */
 export const LOAD_COUNTRIES = gql`
 query{ 
    countries {
@@ -20,6 +23,10 @@ query{
 }
 `;
 
+/**
+ * Export a country  from api
+ * @param code country's code
+ */
 export const LOAD_COUNTRY = gql`
 query getCountryByCode($code: ID!   ){ 
    country(code: $code) {
