@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {useQuery} from "@apollo/client";
 import {LOAD_COUNTRIES} from "../GraphQL/queries";
 import LoadingAnimation from "./Loading-animation";
+import CountryFilter from "./CountryFilter";
 
 function Countries() {
 
@@ -17,6 +18,10 @@ function Countries() {
             setCountries(data.countries)
         }
     }, [data]);
+
+    const filterHandler = (inputQuery: string) => {
+        setQuery(inputQuery);
+    }
 
     /**
      * Method that return a filtered list
@@ -39,18 +44,9 @@ function Countries() {
     return (
         <div>
             {!loading ?
-                <div>
-                    <div className='container flex justify-center items-center px-4 sm:px-6 lg:px-8 mt-10 mb-5'>
-                        <label htmlFor="search-form" className='relative'>
-                            <input
-                                type="search" name='search-form' id='search-form'
-                                className='h-14 w-96 pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none'
-                                placeholder='Search by name or Code' value={query}
-                                onChange={(e) => setQuery(e.target.value)}
-                            />
-                        </label>
-                    </div>
-                    <div className="flex flex-wrap -mx-3 mb-20 overflow-y-auto h-screen scrollbar">
+                <div className='flex flex-col max-h-screen overflow-y-auto overflow-x-hidden mb-20'>
+                    <CountryFilter inputValue={query} onFilterCHange={filterHandler}/>
+                    <div className="flex flex-wrap -mx-3 pb-20 overflow-y-auto overflow-x-hidden no-scrollbar">
                         {
                             filterByName(countries).map((country: any, index: any) => <Country {...country} key={index}/>)
                         }
