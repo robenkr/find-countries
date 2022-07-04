@@ -38,14 +38,14 @@ function CountryDetail() {
                             />
                         </div>
                         <div className="flex flex-col items-center text-center text-white justify-center">
-                            <h2 className="font-medium title-font mt-4 text-transform: uppercase text-white text-lg">{country.name || '-'}</h2>
+                            <h2 className="font-medium title-font mt-4 text-transform: uppercase text-gray-700 text-lg">{country.name || '-'}</h2>
                             <div className="w-12 h-1 bg-blue-500 rounded mt-2 mb-4"/>
-                            <p className="text-base">
+                            <p className="text-base text-gray-700">
                                 <strong>Capital :</strong> {country.capital}
                             </p>
                         </div>
                     </div>
-                    <div className="sm:w-1/4 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center text-gray-100 sm:text-left">
+                    <div className="sm:w-1/4 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center text-gray-700 sm:text-left">
                         <p className="leading-relaxed text-lg mb-4">
                             <strong>Continent :</strong> {country?.continent?.name}
                         </p>
@@ -64,7 +64,7 @@ function CountryDetail() {
                         </div>
                     </div>
                     <div className="sm:w-2/6 mx-auto">
-                        <div className="rounded-lg h-auto overflow-hidden">
+                        <div className="rounded-lg h-auto overflow-hidden shadow-md hover:shadow-lg">
                             <img alt={`${countryCode}`} onError={addDefaultSrc}
                                  className="object-cover object-center h-full w-full"
                                  src={`https://www.worldatlas.com/r/w425/img/flag/${countryCode.toLocaleLowerCase()}-flag.jpg`}/>
